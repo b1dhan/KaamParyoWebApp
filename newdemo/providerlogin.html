@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Login</title>
+  <style>
+    #mapModal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #mapModal.hidden { display: none; }
+    #mapBox {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    #map { width: 100%; height: 300px; border-radius: 10px; }
+    .btn-small {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2 class="form-title">Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+    <div class="form-footer">
+          Don't have an account? <a href="provider.html">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+  <script type="module" src="providermain.js"></script>
+</body>
+</html>
+
+

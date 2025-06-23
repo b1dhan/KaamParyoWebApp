@@ -1,0 +1,280 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-sec{
+    background-color: #f8f9fa;
+    margin-top: 15px;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+.para1{
+    font-size: 16px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 100px; 
+    color: #333333;
+}
+
+fieldset{
+    background-color: #FFFFFF;
+    border: 1px solid transparent;
+    width: 500px;
+    height: 560px;
+    z-index: 1;
+    position: relative;
+    top: 55px;
+    left: 400px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) 
+{
+    fieldset {
+        width: 90%;
+        left: 5%;
+        top: 10px;
+    }
+
+    .submit {
+        padding: 18px 10px;
+    }
+
+    .back a {
+        padding-left: 40%;
+    }
+}
+
+input {
+    border-color: rgb(138, 133, 133);
+    padding-right: 20px;
+    background: #F5F5F5 , #333333;
+    border: 0.1px solid transparent;
+}
+
+input:placeholder-shown{
+    font-size: 0.8rem;
+    padding-left: 5px;
+}
+
+.name{ 
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 380px;
+}
+
+.username{
+    margin-top: 0px;
+    width: 320px;
+}
+
+.username input{
+    width: 270px;
+    height: 45px;
+    margin-left: 23px;
+    margin-top: 0px;
+    border-radius: 5px;
+    border: 0.1px solid rgba(102, 101, 101, 0.285);
+    padding-left: 10px;
+}
+
+input:hover{
+    transform: scale(1.009);
+    transition: all 0.2s;
+}
+
+.submit {
+    margin-top: 70px; 
+    margin-left: 8px;
+    font-size: 1rem;
+    padding: 18px 320px 18px 310px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;            
+    box-shadow: 0px 0px 3px #2e2e2e;
+    border-radius: 8px;
+    border: 0.1px solid transparent;
+    background: linear-gradient( #81889c 50%, #757F9A  100%);
+}
+
+.tera{
+    position: absolute;
+    top: 5px;
+    display: inline-block;
+    left: 50%;
+}
+.feedback:placeholder-shown{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+textarea{
+    width: 300px;
+    height: 280px;
+    border: 0.1px;
+    border: 0.2px solid rgb(226, 212, 212);
+    border-radius: 10px;
+    position: relative;
+    left: 25px;    
+}
+
+@media (max-width: 768px) {
+    .contact_us {
+        width: 100%;
+        height: auto;
+    }
+    
+    .rotate {
+        width: 100%;
+    }
+    
+    fieldset {
+        width: 90%;
+        left: 5%;
+        top: 20px;
+        height: auto;
+        padding-bottom: 30px;
+    }
+    
+    .submit {
+        padding: 15px;
+        width: calc(100% - 16px);
+        margin-left: 0;
+    }
+    
+    .tera {
+        position: static;
+        left: auto;
+        margin: 20px 0;
+    }
+    
+    textarea {
+        width: calc(100% - 50px);
+        left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title {
+        font-size: 0.9rem;
+    }
+    
+    .para1 {
+        margin-left: 10px;
+    }
+}
+form{
+    position: relative;
+    top: 17px;
+}
+
+h2{
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 0px;
+    color: rgb(84, 81, 81);
+    font-size: 2.2rem;
+}
+
+.title{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -10px;
+    left: 7px;
+    margin: 0px;
+    color: #34373f;
+    font-size: 1rem;
+}
+
+.heading{
+    position: relative;
+    top: 22px;
+    left: 0px;
+}
+
+textarea::placeholder {
+    margin-left: 20px;
+    border: 0.1px;
+}
+
+.contact_us{
+    width: 1518px;
+    height: 700px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        width: 90%;
+        left: 5%;
+        top: 10px;
+    }
+    
+    .submit {
+        padding: 18px 10px;
+    }
+    
+    .back a {
+        padding-left: 40%;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    .username input {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    textarea {
+        width: 100%;
+        left: 0;
+    }
+    
+    .submit {
+        padding: 15px;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-title {
+        font-size: 1.3rem;
+    }
+    
+    .para1 {
+        margin-left: 10px;
+    }
+    
+    .name {
+        width: 100%;
+        margin-left: 0;
+    }
+}

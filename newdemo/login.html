@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Login</title>
+  <style>
+    #mapModal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #mapModal.hidden { display: none; }
+    #mapBox {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    #map { width: 100%; height: 300px; border-radius: 10px; }
+    .btn-small {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2 class="form-title">Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="form-footer">
+          Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="hidden">
+      <h2 class="form-title">Create Account</h2>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="customerName">Full Name</label>
+          <input type="text" id="customerName" required />
+        </div>
+        <div class="form-group">
+          <label for="new-email">Email</label>
+          <input type="email" id="new-email" required />
+        </div>
+        <div class="form-group">
+          <label for="new-password">Password</label>
+          <input type="password" id="new-password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Search or click map" />
+          <button type="button" class="btn btn-small" onclick="toggleMapModal()">📍 Select on Map</button>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+        <div class="form-footer">
+          Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAP MODAL -->
+  <div id="mapModal" class="hidden">
+    <div id="mapBox">
+      <div id="map"></div>
+      <button class="btn btn-small" onclick="toggleMapModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
