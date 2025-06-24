@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+form{
+    margin-top: 60px;
+}
+.form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+.form-group .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.pho-code {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#phone{
+    padding: 10px 15px;
+    width: 500px;
+    height: 48px;
+    display: inline-block;
+}
+
+#country-code option {
+    width: 100px;
+    font-size: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.pho-code {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#country-code {
+    width: 100px;
+    padding: 12px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#phone {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .pho-code {
+        gap: 8px;
+    }
+    
+    #country-code {
+        width: 90px;
+        padding: 10px 6px;
+        font-size: 13px;
+    }
+    
+    #phone {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pho-code {
+        gap: 6px;
+    }
+    
+    #country-code {
+        width: 80px;
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    
+    #phone {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    #country-code {
+        width: 70px;
+        padding: 7px 3px;
+        font-size: 11px;
+    }
+    
+    #phone {
+        padding: 7px 5px;
+    }
+}
+
+#login-form{
+    height: 400px;
+     background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+}
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input {
+    width: 350px;
+    padding: 15px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+.pw, .code{
+    display: flex;
+}
+.pw-input{
+    width: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.code select{
+    width: 100px;
+    padding: 0px 8px 0px 8px ;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 10px;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #3a7bc8;
+}
+.form-sign {
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 80px;
+    padding-bottom: 10px;
+    display: flex;
+}
+.form-login{
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding-bottom: 10px;
+    display: flex;
+}
+    
+.hidden {
+    display: none;
+}
+
+ #signup-form, #login-form {
+  display: none;
+}
+
+#form-toggle:not(:checked) ~ #login-form {
+  display: block;
+}
+
+#form-toggle:checked ~ #signup-form {
+  display: block;
+}
+
+.switch-link {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10x;
+  margin-left: 8px;
+  color: rgb(18, 101, 255);
+}
+.login{
+    margin-left: 10px;
+}
+.log{
+    margin-left: 100x;
+}

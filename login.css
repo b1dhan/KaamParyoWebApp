@@ -1,0 +1,302 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+}
+#login-form{
+    height: 400px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input {
+    width: 350px;
+    padding: 15px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+.pw, .code{
+    display: flex;
+}
+.pw-input{
+    width: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.code select{
+    width: 100px;
+    padding: 0px 8px 0px 8px ;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 10px;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #3a7bc8;
+}
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+.form-footer a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+.form-footer a:hover {
+    text-decoration: underline;
+}
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #login-form, 
+    #signup-form {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px 10px !important;
+    }
+
+    .btn {
+        padding: 12px !important;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+        margin: 15px 0;
+    }
+
+    .form-footer {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 0.9rem !important;
+        padding: 10px 8px !important;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 10px !important;
+    }
+
+    .form-footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    input::placeholder {
+        font-size: 0.75rem;
+    }
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 5px;
+    }
+
+    .form-container {
+        padding: 10px;
+        max-width: 350px;
+    }
+
+    #login-form, 
+    #signup-form {
+        height: auto;
+    }
+
+    .form-group {
+        margin-bottom: 8px;
+    }
+
+    input {
+        padding: 8px 6px !important;
+    }
+}
+
+
+
+form{
+    position: relative;
+    top: 17px;
+}
+
+h2{
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 0px;
+    color: rgb(84, 81, 81);
+    font-size: 2.2rem;
+}
+
+.title{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -10px;
+    left: 7px;
+    margin: 0px;
+    color: #34373f;
+    font-size: 1rem;
+}
+
+.heading{
+    position: relative;
+    top: 22px;
+    left: 0px;
+}
+
+textarea::placeholder {
+    margin-left: 20px;
+    border: 0.1px;
+}
+
+.contact_us{
+    width: 1518px;
+    height: 700px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        width: 90%;
+        left: 5%;
+        top: 10px;
+    }
+    
+    .submit {
+        padding: 18px 10px;
+    }
+    
+    .back a {
+        padding-left: 40%;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    .username input {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    textarea {
+        width: 100%;
+        left: 0;
+    }
+    
+    .submit {
+        padding: 15px;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-title {
+        font-size: 1.3rem;
+    }
+    
+    .para1 {
+        margin-left: 10px;
+    }
+    
+    .name {
+        width: 100%;
+        margin-left: 0;
+    }
+}

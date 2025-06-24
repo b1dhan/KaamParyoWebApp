@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <meta charset="UTF-8" />
+  <title>KaamParyo Rating</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="rating.css" />
+</head>
+<body>
+
+
+  <div id="ratingModal">
+    <div class="modal-content">
+      <h2 class="modal-heading animate__animated animate__bounceIn animate__delay-0.8s">Please rate the worker!</h2>
+
+
+      <input
+        type="range"
+        min="1"
+        max="5"
+        value="3"
+        id="ratingSlider"
+        class="slider"
+        oninput="document.getElementById('sliderValue').textContent = this.value"
+      />
+      <div class="slider-value">
+  Rating: <span id="sliderValue">3</span>
+  
+</div>
+
+      <button id="submitBtn" class="submit-btn">Submit</button>
+    </div>
+  </div>
+
+
+  <div id="thankYou" class="thank-you animate__animated animate__heartBeat" style="display: none;">
+    Thank you for your rating :)
+  </div>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
