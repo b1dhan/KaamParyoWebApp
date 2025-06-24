@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Service Provider Form</title>
+    <link rel="stylesheet" href="provider.css" />
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Become a service provider</h2>
+        <form id="providerForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required minlength="6" />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <div class="pho-code">
+                    <select id="country-code" style="width: 110px; margin-right: 10px;">
+                        <option value="+977" selected>+977</option>
+                        <option value="+91">+91</option>
+                        <option value="+1">+1</option>
+                    </select>
+                    <input type="tel" id="phone" placeholder="98XXXXXXXX" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'')" pattern="[0-9]{10}" title="Only 10-digit numbers allowed (e.g., 9841234567)" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service" required>
+                    <option value="">-- Select a Service --</option>
+                    <option value="plumber">Plumbing</option>
+                    <option value="electrician">Electrical</option>
+                    <option value="appliance">Appliance Repair</option>
+                    <option value="laptop">Laptop Repair</option>
+                    <option value="painting">Painting</option>
+                    <option value="antivirus">Virus Protection</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Experience</label>
+                <div class="options">
+                    <label><input type="radio" name="experience" value="1-2 years" required /> 1-2 years</label>
+                    <label><input type="radio" name="experience" value="3-5 years" /> 3-5 years</label>
+                    <label><input type="radio" name="experience" value="5+ years" /> 5+ years</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Available Days</label>
+                <div class="options">
+                    <label><input type="checkbox" name="days" value="Mon" /> Mon</label>
+                    <label><input type="checkbox" name="days" value="Tue" /> Tue</label>
+                    <label><input type="checkbox" name="days" value="Wed" /> Wed</label>
+                    <label><input type="checkbox" name="days" value="Thu" /> Thu</label>
+                    <label><input type="checkbox" name="days" value="Fri" /> Fri</label>
+                    <label><input type="checkbox" name="days" value="Sat" /> Sat</label>
+                    <label><input type="checkbox" name="days" value="Sun" /> Sun</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Brief Description</label>
+                <textarea id="description" placeholder="Tell us about your services..."></textarea>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script type="module" src="provider.js"></script>
+</body>
+
+</html>

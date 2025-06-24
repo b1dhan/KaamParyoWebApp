@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,674;1,674&display=swap" rel="stylesheet">
+    <title>Main Page</title>
+    <link rel="shortcut icon" href="pic/favicon.png" type="image/x-icon">
+</head>
+<body id="Back">
+    <header class="navbar">
+    <div class="logo">
+        <a href="index.html#Back">
+            <img src="pic/kaamParyolongplain.png" alt="icon" class="logo-icon">
+        </a>
+    </div>
+    
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="head-sec" id="mobileMenu">
+        <ul class="list">
+            <li>
+                <a href="service.html"> Services </a>
+            </li>
+            <li>
+                <a href="how-work.html"> How It Works </a>
+            </li>
+            <li>
+                <a href="about.html"> About US </a>
+            </li>
+            <li>
+                <a href="blog.html"> Blogs </a>
+            </li>    
+        </ul>
+        <div class="login-container">
+            <p class="login-btn"> JOIN</p>
+        <div class="login-dropdown">
+            <a href="login.html" class="login-option" style="text-decoration: underline; text-underline-offset: 6px;">Customer Login</a>
+            <a href="providerlogin.html" class="login-option" style="text-decoration: underline; text-underline-offset: 6px;">Provider Login</a>
+        </div>
+    </div>
+    
+    </div>   
+</header>
+
+<div class="image">
+
+    <div class="content">
+        
+         <div class="title-1st">
+            <p class="title-para">Same-Day Experts Near You
+                </p>
+        </div>
+
+        <div class="title-2nd">
+            <p class="title">
+                Trusted professionals at your doorstep. 
+                <span>Book any service in minutes - fast, easy, and reliable</span>
+            </p>
+        </div>
+       
+        <div>
+            <button id="new"> Book Now </button>
+
+            <div class="overlay" id="loginOverlay">
+                    <div class="login-message">
+                        <div class="exist">
+                            <p onclick="document.getElementById('loginOverlay').style.display='none'; document.body.classList.remove('blurred')"></p>
+                        </div>
+                        <div class="pop">
+                            <h2>Please login first</h2>
+                            <p class="pop-head">You need to be logged in to perform this action</p>
+                            <a href="login.html"><p class="pop-p">Login In</p></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<main>
+    <div class="part1" id="service">
+        <p class="part1-title">Our Services</p>
+        <div class="part1-item">
+
+            <div class="item-right">
+                 <span class="left-pic"> 
+                    <img src="pic/plumber.png" alt="plumber">
+   
+                 </span>
+                <span class="service-plum">  
+                    <h2> Expert Plumbing</h2>
+                        <p>Got a burst pipe or a clogged drain? We arrive quickly to fix issues on the spot, saving you from water damage and stress.</p>
+                           <ul> 
+                            <li> 24/7 emergency service</li>
+                            <li> No extra fees for nights/weekends</li>
+                            <li> Leak detection & repair</li>
+                        </ul>
+                            <a href="service/plumb.html"><button class="btn-item fir arrow">Find Worker</button></a>
+                </span>
+            </div>
+       
+           <div class="item-right">
+             <span class="left-pic"> 
+                <img src="pic/electrician.png" alt="electrician">
+
+            </span>
+                <span class="service-plum">  
+                    <h2> Electrical Solutions</h2>
+                        <p>Our certified electricians provide safe, reliable solutions with 100% compliance to safety standards.</p>
+                            <ul>
+                                <li> 24/7 emergency service</li>
+                                <li> No extra fees for nights/weekends</li>
+                                <li> Leak detection & repair</li>                                   
+                            </ul>  
+                           <a href="service/electric.html" > <button class="btn-item sec arrow" style="margin-top: 15px;">Find Worker</button></a>    
+                </span>
+                 
+            </div>
+
+
+        <div class="item-right">
+            <span class="left-pic">
+                <img src="pic/technician.png" alt="plumber">
+
+            </span>
+                <span class="service-plum">  
+                    <h2>Laptop Repair By Expert</h2>
+                        <p>Our technicians handle everything from simple part to malfunctioning laptop with fast turnaround.</p>
+                           <ul> 
+                                <li> 24/7 emergency service</li>
+                                <li> Wiring installations & upgrades</li>
+                                <li> Lighting design & fixture installation</li>
+                            </ul>
+                             <a href="service/laptop.html"><button class="btn-item thir arrow">Find Worker</button></a>
+                </span>
+            </div>
+            
+        </div> 
+        
+            <div class="services-footer">
+                        <a href="service.html" class="btn">View All Services</a>
+                    </div>
+    </div>
+</main>
+
+
+<div id="Work" class="how-it-works-section">
+    <div class="container">
+        <h2 class="section-title">Get Help in 3 Simple Steps</h2>
+        <p class="section-subtitle">Follow our straightforward process to connect with trusted professionals in minutes.</p>
+        
+        <div class="steps-container">
+         
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <i class="fa fa-search step-icon"></i>
+                    <span class="step-number">1</span>
+                </div>
+                <h3>Find Your Service</h3>
+                <p>Use our search bar or browse categories to find the exact service you need, from plumbing to laptop repair.</p>
+            </div>
+
+    
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                     <i class="fa fa-calendar-check-o step-icon"></i>
+                     <span class="step-number">2</span>
+                </div>
+                <h3>Book & Schedule</h3>
+                <p>Select a verified provider, by their profile and ratings, and book a time that works for you directly on our platform.</p>
+            </div>
+
+            <div class="step-card">
+                 <div class="step-icon-wrapper">
+                    <i class="fa fa-check-circle-o step-icon"></i>
+                    <span class="step-number">3</span>
+                </div>
+                <h3>Get It Done</h3>
+                <p>A skilled professional arrives on schedule to complete the job. Pay securely online and leave a review once you're satisfied.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="about">
+        <div class="review">
+    <div class="review-up">
+        <p class="review-p">
+            See What Our Client Say About Us</p>
+        <div class="review-mid">
+            <div class="review-img-container">
+               
+                <p>With professional experience, It is your trusted partner for all facility management needs. We provide comprehensive, 
+                    one-stop solutions from low to high work so you can focus on your core business while saving time and reducing costs. </p>
+                    
+                    <p>Our reliable and efficient services ensure your facilities run smoothly. Let us handle the hassles while you enjoy a well-managed,
+                        hassle-free workspace. Partner with our services for quality, affordability, and peace of mind.</p>
+            </div>
+                <div class="about-image">
+                    <img src="pic/review1.png" alt="Pic">
+                </div>
+
+
+                </div>
+            </div>
+    </div>
+
+   
+    <div class="review-ls">
+        <h3>Reviews</h3>
+        <span class="top-rate">
+            <p class="review-rate">4.0</p>
+            <img src="pic/graph.png" alt="rating">
+            <p class="star">Over 100+ review</p>
+        </span>
+
+        <div id="review">
+        <div class="review-list">
+            <div class="review-people">
+                <img src="pic/pic2.png" alt="pic" class="people">
+                <div class="review-content">
+                    <p>Evash Pun</p>
+                    <p id="days">2 weeks ago</p>
+                </div>
+                <img src="pic/googler.png" alt="google" class="google">
+            </div> 
+            <div id="rate">
+                <img src="pic/graph.png" alt="rate">
+                <p>Great platform! The services are reliable and easy to book. The website is user-friendly, 
+                and the providers are professional. A few minor tweaks could make it perfect, but overall, a fantastic experience. Highly recommend!</p>
+            </div>  
+        </div>
+
+        <div class="review-list">
+            <div class="review-people">
+                <img src="pic/pic3.png" alt="pic" class="people">
+                <div class="review-content">
+                    <p>Naresh Rai</p>
+                    <p id="days">1 months ago</p>
+                </div>
+                <img src="pic/googler.png" alt="google" class="google">
+            </div> 
+            <div id="rate">
+                <img src="pic/graph.png" alt="rate"  >
+                <p>Impressed with the professionalism! Booked an electrician, and they arrived on time 
+                    and fixed the issue perfectly. The site works smoothly, and customer support is responsive. A few more features would make it a full 5-star!</p>
+            </div>  
+        </div>
+
+        <div class="review-list">
+            <div class="review-people">
+                <img src="pic/pic1.png" alt="pic" class="people">
+                <div class="review-content">
+                    <p>Alin Nepal</p>
+                    <p id="days">3 weeks ago</p>
+                </div>
+                <img src="pic/googler.png" alt="google" class="google">
+            </div> 
+            <div id="rate">
+                <img src="pic/graph.png" alt="rate">
+                <p>Very convenient and efficient! Found a great plumber quickly, and the service was top-notch. The website is
+                    clean and easy to navigate. Just a bit more variety in providers would make it even better!</p>
+            </div>  
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+ 
+  <footer>
+    <div class="footer-container">
+      
+      <div class="footer-brand">
+        <h1><Span>Kam</Span>
+        <span style="font-size: 24px;">Paryo</span></h1>
+        <p>Delivering professional repair services with reliability and care. Your devices, our priority.</p>
+      
+        <div class="footer-section">
+        <h3 style="margin-bottom: 5px;">Working Hours</h3>
+        <div class="working-hours">
+          <p><strong>Mon - Fri:</strong> 8:00 AM - 5:00 PM</p>
+          <p><strong>Saturday:</strong> 8:00 AM - 6:00 PM</p>
+          <p><strong>Sunday:</strong> Closed</p>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html#about">About Us</a></li>
+          <li><a href="#">Help & FAQs</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="service/appliance.html">Electric Repair</a></li>
+          <li><a href="service/plumb.html">Plumbing Solution</a></li>
+          <li><a href="service/painting.html">Painting Solution</a></li>
+          <li><a href="service/laptop.html">Laptop Repair</a></li>
+          <li><a href="service.html">Other..</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li>📞 (+977) 984-1789-457</li>
+          <li>📞 (01) 748-94-562</li>
+          <li>📧 kamparyo@gmail.com</li>
+          <li>📧 support@kamparyo.com</li>
+          <li>🏠 kathmandu, Nepal</li>
+          <li>🏙️ Kalanki, 14</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="divider"></div>
+    <div class="footer-bot">
+        <p>© 2025 Kam Paryo. All rights reserved.</p>
+        <div class="footer-link">
+            <a href="#">Support</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+      
+        document.addEventListener('DOMContentLoaded', function() {
+ 
+            const buttons = document.querySelectorAll('#new');
+            const overlay = document.getElementById('loginOverlay');
+            
+
+            buttons.forEach(button => {
+       
+                if (!button.closest('.overlay')) {
+                    button.addEventListener('click', function(e) {
+                    
+                        e.preventDefault();
+                        
+                     
+                        overlay.style.display = 'flex';
+                        document.body.classList.add('blurred');
+                    });
+                }
+            });
+        });
+    
+
+    const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const body = document.body;
+
+hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    body.classList.toggle('menu-open');
+});
+
+const navLinks = document.querySelectorAll('.head-sec a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+});
+    </script>
+</body>
+</html>
