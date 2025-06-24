@@ -1,4 +1,3 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import {
   getAuth,
@@ -17,7 +16,7 @@ import {
   Timestamp
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
-// Firebase Config
+
 const firebaseConfig = {
   apiKey: "AIzaSyDhIJ4a4mEHbLYDXmOXorGe0VJ4l6XVqFE",
   authDomain: "finaldemo-38f19.firebaseapp.com",
@@ -31,13 +30,48 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Toggle login/signup forms
+
 window.toggleForms = () => {
-  document.getElementById("login-form").classList.toggle("hidden");
-  document.getElementById("signup-form").classList.toggle("hidden");
+  const loginForm = document.getElementById("login-form");
+  const signupForm = document.getElementById("signup-form");
+  const addressInput = document.getElementById("address");
+
+  loginForm.classList.toggle("hidden");
+  signupForm.classList.toggle("hidden");
+
+  
+  if (!signupForm.classList.contains("hidden")) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        try {
+          const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
+          const data = await res.json();
+          if (data && data.display_name) {
+            addressInput.value = data.display_name;
+          } else {
+            addressInput.value = `Lat: ${lat.toFixed(5)}, Lon: ${lon.toFixed(5)}`;
+          }
+        } catch {
+          addressInput.value = `Lat: ${lat.toFixed(5)}, Lon: ${lon.toFixed(5)}`;
+        }
+
+        // Auto center map to current location
+        const latlng = L.latLng(lat, lon);
+        map.setView(latlng, 15);
+        placeMarker(latlng);
+      }, () => {
+        addressInput.value = "Unable to fetch location.";
+      });
+    } else {
+      addressInput.value = "Geolocation not supported.";
+    }
+  }
 };
 
-// Toggle Map Modal
+
 window.toggleMapModal = () => {
   const modal = document.getElementById("mapModal");
   modal.classList.toggle("hidden");
@@ -46,7 +80,7 @@ window.toggleMapModal = () => {
   }, 400);
 };
 
-// Leaflet Map Initialization
+
 let selectedLatLng = null;
 let marker = null;
 
@@ -61,8 +95,7 @@ function placeMarker(latlng) {
     marker = L.marker(latlng).addTo(map);
   }
 }
-
-// On map click: set marker and reverse geocode
+//reverse geocode code
 map.on("click", (e) => {
   placeMarker(e.latlng);
   fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
@@ -77,7 +110,7 @@ map.on("click", (e) => {
     });
 });
 
-// If location access is granted, center map
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((pos) => {
     const latlng = L.latLng(pos.coords.latitude, pos.coords.longitude);
@@ -86,7 +119,7 @@ if (navigator.geolocation) {
   });
 }
 
-// Address Input Search (Nepal only)
+// Address Input Search (nepal bhitra tile trim)
 document.getElementById("address").addEventListener("change", () => {
   const query = document.getElementById("address").value.trim();
   if (!query) return;
@@ -104,7 +137,7 @@ document.getElementById("address").addEventListener("change", () => {
     });
 });
 
-// Signup Handler
+// Signup Handleeee
 const signupForm = document.getElementById("signupForm");
 signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -140,14 +173,14 @@ signupForm.addEventListener("submit", async (e) => {
       createdAt: Timestamp.now()
     });
 
-    alert(" Account created!");
+    alert("Account created!");
     window.location.href = "customer-login/index.html";
   } catch (err) {
-    alert(" Signup failed: " + err.message);
+    alert("Signup failed: " + err.message);
   }
 });
 
-// Login Handler
+//loginhandleeeeeee
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -158,14 +191,14 @@ loginForm.addEventListener("submit", async (e) => {
     const userCred = await signInWithEmailAndPassword(auth, email, password);
     const user = userCred.user;
 
-    // Check if provider
+    // Check   porvider
     const providerSnap = await getDocs(query(collection(db, "providercreds"), where("email", "==", email)));
     if (!providerSnap.empty) {
       window.location.href = "provider_dashboard.html";
       return;
     }
 
-    // Check if customer
+    // Checkk if customer
     const userSnap = await getDocs(query(collection(db, "usercreds"), where("email", "==", email)));
     if (!userSnap.empty) {
       window.location.href = "customer-login/index.html";
@@ -177,4 +210,3 @@ loginForm.addEventListener("submit", async (e) => {
     alert("Login failed: " + err.message);
   }
 });
-
