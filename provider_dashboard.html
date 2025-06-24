@@ -6,34 +6,174 @@
   <title>Provider Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Provider Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
-    body { background: #f9f5f0; color: #2c2c2c; font-family: sans-serif; padding:2rem; }
-    .card { background: #fff7ed; border:1px solid #e2d7c3; margin-bottom:1rem; padding:1rem; border-radius:0.5rem; cursor:pointer; }
-    .btn { padding:0.5rem 1rem; margin-right:0.5rem; border:none; border-radius:0.25rem; cursor:pointer; }
-    .accept-btn { background:#4caf50; color:white; }
-    .reject-btn { background:#f44336; color:white; }
-    .complete-btn { background:#1976d2; color:white; }
-    #modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); align-items:center; justify-content:center; }
-    .modal-content { background:white; padding:1.5rem; border-radius:0.5rem; width:90%; max-width:450px; text-align:left; position:relative; }
-    #statusMsg { margin-bottom: 1rem; font-weight: 600; text-align: center; }
-    .counters { margin-bottom: 1rem; font-weight: 600; text-align: center; font-size: 1.1rem; }
-    .close-btn { position:absolute; top:10px; right:12px; font-size:1.2rem; background:none; border:none; color:#888; cursor:pointer; }
-    .close-btn:hover { color:#f44336; }
-    #map { height: 200px; margin-top: 10px; border-radius: 0.25rem; }
-    p { margin: 0.25rem 0; }
+    body {
+      background-color: #f0f4f8;
+      color: #1f2937;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+    .text-heading {
+      font-size: 1.875rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #111827;
+    }
+    .counters {
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+    .status-msg {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+      color: #dc2626;
+    }
+    .success-msg {
+      color: #16a34a;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #1e40af;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      background-color: #f8fafc;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .card-info {
+      flex: 1;
+      font-weight: 700;
+    }
+    .view-details-btn {
+      padding: 0.5rem 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .view-details-btn:hover {
+      background-color: #2563eb;
+    }
+    .btn {
+      padding: 0.5rem 1.25rem;
+      margin-right: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.2s ease;
+    }
+    .accept-btn {
+      background: #10b981;
+      color: white;
+    }
+    .accept-btn:hover {
+      background: #059669;
+    }
+    .reject-btn {
+      background: #ef4444;
+      color: white;
+    }
+    .reject-btn:hover {
+      background: #dc2626;
+    }
+    .complete-btn {
+      background: #3b82f6;
+      color: white;
+      display: none;
+    }
+    .complete-btn:hover {
+      background: #2563eb;
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      text-align: left;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      border: 1px solid #e5e7eb;
+    }
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      color: #ef4444;
+    }
+    #map {
+      height: 200px;
+      margin-top: 10px;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+    }
+    p {
+      margin: 0.25rem 0;
+    }
   </style>
 </head>
-<body>
-  <h1 class="text-3xl text-center mb-6">Provider Dashboard</h1>
 
+<body>
+  <h1 class="text-heading">Provider Dashboard</h1>
   <div class="counters">
     <span>Pending Jobs: <span id="pendingJobsCount">0</span></span> &nbsp;&nbsp;|&nbsp;&nbsp;
     <span>Completed Jobs: <span id="completedJobsCount">0</span></span>
   </div>
-
-  <div id="statusMsg"></div>
-
-  <h2 class="text-xl mb-2">Available Requests</h2>
+  <div id="statusMsg" class="status-msg"></div>
+  <h2 class="section-title">Available Requests</h2>
   <div id="requestList"></div>
 
   <div id="modal">
@@ -52,13 +192,10 @@
       <div class="mt-4 text-center">
         <button id="acceptBtn" class="btn accept-btn">Accept</button>
         <button id="rejectBtn" class="btn reject-btn">Reject</button>
-        <button id="completeBtn" class="btn complete-btn hidden">Mark Completed</button>
+        <button id="completeBtn" class="btn complete-btn">Mark Completed</button>
       </div>
     </div>
   </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
     import {
@@ -127,11 +264,7 @@
       });
 
       onSnapshot(
-        query(
-          collection(db, 'requests'),
-          where('status', '==', 'pending'),
-          orderBy('reqTime', 'desc')
-        ),
+        query(collection(db, 'requests'), where('status', '==', 'pending'), orderBy('reqTime', 'desc')),
         snap => {
           requestList.innerHTML = '';
           statusMsg.textContent = activeDocId ? "You are busy with a job—complete it first." : "";
@@ -142,17 +275,28 @@
           snap.docs.forEach(d => {
             const data = d.data();
             if (data.providerId || !data.reqTime) return;
+
             const div = document.createElement('div');
             div.className = 'card';
-            div.textContent = `${data.serviceType}: ${data.description.slice(0, 40)}...`;
-            div.onclick = () => {
+
+            const info = document.createElement('div');
+            info.className = 'card-info';
+            info.textContent = `${data.serviceType.toUpperCase()}: ${data.description.slice(0, 40)}...`;
+
+            const btn = document.createElement('button');
+            btn.className = 'view-details-btn';
+            btn.textContent = 'View Details';
+            btn.onclick = () => {
               if (!activeDocId) showModal(data, d.id);
             };
-            requestList.append(div);
+
+            div.appendChild(info);
+            div.appendChild(btn);
+            requestList.appendChild(div);
           });
         },
         err => {
-          console.error(" Firestore error:", err.message);
+          console.error("❌ Firestore error:", err.message);
           statusMsg.textContent = "Error loading jobs. Check console.";
         }
       );
@@ -185,9 +329,9 @@
         modalCustomerName.textContent = modalCustomerPhone.textContent = modalCustomerAddress.textContent = 'Error';
       }
 
-      acceptBtn.classList.toggle('hidden', !!activeDocId);
-      rejectBtn.classList.toggle('hidden', !!activeDocId);
-      completeBtn.classList.toggle('hidden', data.status !== 'accepted' || providerUid !== data.providerId);
+      acceptBtn.style.display = activeDocId ? 'none' : 'inline-block';
+      rejectBtn.style.display = activeDocId ? 'none' : 'inline-block';
+      completeBtn.style.display = (data.status === 'accepted' && providerUid === data.providerId) ? 'inline-block' : 'none';
       modal.style.display = 'flex';
 
       setTimeout(() => {
@@ -216,12 +360,17 @@
       await updateDoc(doc(db, 'requests', activeDocId), { providerCompleted: true });
       const snap = await getDoc(doc(db, 'requests', activeDocId));
       const d = snap.data();
+
       if (d.userCompleted) {
         await updateDoc(snap.ref, { status: 'completed' });
         modal.style.display = 'none';
-      } else {
-        statusMsg.textContent = "Waiting for customer to mark completed.";
       }
+
+      statusMsg.textContent = "Thanks for choosing us - Worker";
+      statusMsg.classList.remove("status-msg");
+      statusMsg.classList.add("success-msg");
+      activeDocId = null;
+      activeData = null;
     }
 
     function initializeLeafletMap(lat, lng) {
