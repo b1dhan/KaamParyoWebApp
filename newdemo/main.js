@@ -18,7 +18,6 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDhIJ4a4mEHbLYDXmOXorGe0VJ4l6XVqFE",
   authDomain: "finaldemo-38f19.firebaseapp.com",
   projectId: "finaldemo-38f19",
   storageBucket: "finaldemo-38f19.appspot.com",
@@ -210,3 +209,4 @@ loginForm.addEventListener("submit", async (e) => {
     alert("Login failed: " + err.message);
   }
 });
+
