@@ -4,7 +4,6 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDhIJ4a4mEHbLYDXmOXorGe0VJ4l6XVqFE",
   authDomain: "finaldemo-38f19.firebaseapp.com",
   projectId: "finaldemo-38f19",
   storageBucket: "finaldemo-38f19.firebasestorage.app",
@@ -18,4 +17,5 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 export { auth, db };
+
 
